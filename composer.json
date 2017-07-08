@@ -6,7 +6,11 @@
         "vonec",
         "gitsync",
         "aws codedeploy",
-        "autoscaled instances"
+        "autoscaled instances",
+        "autoscaling",
+        "codedeploy",
+        "laravel",
+        "aws-ec2",
     ],
     "homepage": "https://github.com/vonec/gitsync",
     "license": "MIT",
