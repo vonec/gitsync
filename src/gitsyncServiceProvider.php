@@ -1,6 +1,6 @@
 <?php
 
-namespace Vonec\gitsync;
+namespace Vonec\Gitsync;
 
 use Illuminate\Support\ServiceProvider;
 

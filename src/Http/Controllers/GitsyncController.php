@@ -7,8 +7,11 @@ use App\Http\Controllers\Controller;
 use Artisan;
 use Mail;
 use Exception;
- 
-class EnvolController extends Controller
+
+use Aws\Ec2\Ec2Client;
+use Vonec\Gitsync\Jobs\SyncGit;
+
+class GitsyncController extends Controller
 {
  
     public function hook(Request $request)
@@ -82,14 +85,14 @@ class EnvolController extends Controller
         }
 
         // If notification mail if define
-        if (!empty(config('envol.mail'))) {
+        if (!empty(config('gitsync.mail'))) {
             $textMail = 'App deploy success';
             $textMail .= $log;
 
             // Send mail
             Mail::raw($textMail, function ($message) {
                 $message->from(config('mail.from.address'));
-                $message->to(config('envol.mail'));
+                $message->to(config('gitsync.mail'));
                 $message->subject('App deploy');
             });
         }
