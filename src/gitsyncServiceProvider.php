@@ -4,7 +4,7 @@ namespace Vonec\Gitsync;
 
 use Illuminate\Support\ServiceProvider;
 
-class gitsyncServiceProvider extends ServiceProvider
+class GitsyncServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -13,7 +13,12 @@ class gitsyncServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
+        $this->publishes([
+            __DIR__.'/../config/gitsync.php' => config_path('gitsync.php'),
+        ]);
+
+        $this->loadRoutesFrom(__DIR__.'/Http/routes.php');
     }
 
     /**
@@ -22,7 +27,8 @@ class gitsyncServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        //
+    {        
+        $this->app->make('Vonec\Gitsync\Http\Controllers\GitsyncController');
     }
 }
+

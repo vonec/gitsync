@@ -17,16 +17,16 @@ class SyncGit extends Job implements SelfHandling, ShouldQueue
 {
     use InteractsWithQueue, SerializesModels;
 
-    private $server;
+    private $server_ip;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($server)
+    public function __construct($server_ip)
     {
-        $this->server = $server;
+        $this->server_ip = $server_ip;
     }
 
     /**
@@ -37,30 +37,32 @@ class SyncGit extends Job implements SelfHandling, ShouldQueue
     public function handle()
     {
             
-        dump("Logging into server: ".$this->server);
-        $key = new RSA();
-        $contents = Storage::get('bridesgenie-east.ppk');
+        // validate ip address
 
-        //$key->setPassword('whatever');
-        $key->loadKey($contents);
+        if(filter_var($server_ip, FILTER_VALIDATE_IP)) {
+            dump("Logging into Server: ".$this->server_ip);
+            if(!empty(config('gitsync.ppk'))){
+                $key = new RSA();
+                $contents = Storage::get(config('gitsync.ppk'));
 
-        $ssh = new SSH2($this->server);
-        if (!$ssh->login('ubuntu', $key)) {
-            exit('Login Failed');
+                //$key->setPassword('whatever');
+                $key->loadKey($contents);
+
+                $ssh = new SSH2($this->server_ip);
+                if (!$ssh->login('ubuntu', $key)) {
+                    exit('Login Failed');
+                }
+                $ssh->setTimeout(60);
+                if(!empty(config('gitsync.commands'))){
+                    $commands = implode('; ', config('gitsync.commands'));
+                    //echo $commands;
+                    $output = $ssh->exec($commands);
+
+                }
+                dump($output);
+            }
+            
+
         }
-        $ssh->setTimeout(60);
-        $commands = [
-            'cd /var/www/bridesgenie.com/',
-            'sudo git pull origin',
-            'sudo composer update',
-            'sudo gulp',
-            'sudo chown -R nginx:nginx /var/www/bridesgenie.com/',
-            'echo ""',
-            'echo "Synced at $(date)"',
-        ];
-        $commands = implode('; ',$commands);
-        //echo $commands;
-        $output = $ssh->exec($commands);
-        dump($output);
     }
 }
