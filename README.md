@@ -1,83 +1,67 @@
-# :package_name
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
+<hr>
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
+# Gitsync
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+Laravel Package to deploy code automatically from git to multiple autoscaling EC2 instances on AWS using Github/Bitbucket webhooks.
 
 ## Structure
 
 If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
 
-```
+```json
 bin/        
 config/
 src/
 tests/
 vendor/
+Install
 ```
 
+### Via Composer
 
-## Install
-
-Via Composer
-
-``` bash
-$ composer require :vendor/:package_name
+```json
+$ composer require vonec/gitsync
 ```
 
-## Usage
+### Usage
 
-``` php
+```json
 $skeleton = new League\Skeleton();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
+### Change log
 
-## Change log
+Please see <a href="https://github.com/vonec/gitsync/blob/HEAD/CHANGELOG.md" rel="nofollow noopener external">CHANGELOG</a> for more information on what has changed recently.
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+### Testing
 
-## Testing
-
-``` bash
 $ composer test
-```
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+Please see <a href="https://github.com/vonec/gitsync/blob/HEAD/CONTRIBUTING.md" rel="nofollow noopener external">CONTRIBUTING</a> and 
+<a href="https://github.com/vonec/gitsync/blob/HEAD/CONDUCT.md" rel="nofollow noopener external">CONDUCT</a> for details.
 
-## Security
+## Security Vulnerabilities
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover a security vulnerability within Gitsync, please send an e-mail to Vamsi Krishnan at vamsi@vonectech.com. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
-- [:author_name][link-author]
-- [All Contributors][link-contributors]
+<ul>
+<li><a href="https://github.com/vonec">Vonec Technologies</a></li>
+<li><a href="https://github.com/vonec/gitsync/contributors">All Contributors</a></li>
+</ul>
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/:author_username
-[link-contributors]: ../../contributors
