@@ -1,6 +1,7 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-## <center> Gitsync</center>
+
+<h2 align="center">Gitsync</h2>
 
 <p align="center">
 <a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/d/total.svg" alt="Total Downloads"></a>
