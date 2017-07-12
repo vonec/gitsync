@@ -25,7 +25,7 @@ return [
     |
     | Supported: "github", "bitbucket"
     |
-    | [To Do: identify provider based on workload ]
+    | [To Do: identify provider based on payload/headers ]
      */
 
     'hosting' => '',
