@@ -1,7 +1,7 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 
-<h2 align="center">Gitsync</h2>
+<h1 align="center">Gitsync</h1>
 
 <p align="center">
 <a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/d/total.svg" alt="Total Downloads"></a>
@@ -31,11 +31,10 @@ Open your terminal(CLI), go to the root directory of your Laravel project, then 
     php artisan  vendor:publish --provider="Vonec\Gitsync\GitsyncServiceProvider"
     ```
 
-Edit "/config/gitsync.php"
 
 ## Configuration
 
-Soon
+Edit "/config/gitsync.php"
 
 ## Usage
 
@@ -43,6 +42,9 @@ Add webhook in Github or Bitbucket
 
 http(s)://your-project/gitsync?key=YOURKEY
 
+YOURKEY can be defined in configuration
+
+Multiple servers require queue workers.
 
 
 ### Change log

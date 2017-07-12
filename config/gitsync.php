@@ -8,11 +8,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | Key for security. Generate key with with Laravel helper str_random or 
-    | other tools.
-    |
+    | other tools. 
+    | Default: YOURKEY 
+    | Please change below
      */
 
-    'key' => '7092077',
+    'key' => '',
 
 
     /*
@@ -24,6 +25,7 @@ return [
     |
     | Supported: "github", "bitbucket"
     |
+    | [To Do: identify provider based on workload ]
      */
 
     'hosting' => '',
@@ -34,7 +36,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Email address for email notification emails
-    |
+    | 
     */
    
     'mail' => '',
@@ -45,10 +47,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | Name of the remote branch repository to pull
-    |
+    | eg: master
     */
     
-    'branch' => 'master',
+    'branch' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -57,17 +59,17 @@ return [
     |
     | File Name of the ppk 
     | file to be stored at storage/app/
-    | eg: storage/app/filename.ppk
+    | for  "storage/app/filename.ppk" the below corresponsing value is filename.ppk
     */
 
-    'ppk' => 'bridesgenie-east.ppk',
+    'ppk' => '',
 
     /*
     |--------------------------------------------------------------------------
     | Commands
     |--------------------------------------------------------------------------
     |
-    | commads to be run on remote server
+    | commads to be executed on remote server
     |
     |   [ 
     |    'sudo git pull origin',
@@ -78,13 +80,6 @@ return [
     |
     */
     'commands' => [
-        'cd /var/www/bridesgenie.com/',
-        'sudo git pull origin',
-        'sudo composer update',
-        'sudo gulp',
-        'sudo chown -R nginx:nginx /var/www/bridesgenie.com/',
-        'echo ""',
-        'echo "Synced at $(date)"',
     ],
 
 ];
