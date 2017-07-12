@@ -1,35 +1,35 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-<center> <h1>Gitsync</h1> </center>
+
+## <center> Gitsync</center>
+
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/vonec/gitsync/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/vonec/gitsync"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 <hr>
 
-
 Laravel Package to deploy code automatically from git to multiple autoscaling EC2 instances on AWS using Github/Bitbucket webhooks.
 
 ## Installation
 
-Require this package with composer :
+Open your terminal(CLI), go to the root directory of your Laravel project, then follow the following procedure.
+1. Install Through Composer
+    ```bash
+    composer require vonec/gitsync
+    ```
 
-```shell
-composer require vonec/gitsync
-```
+2. Add to `config/app.php`:
+	```php
+	'providers' => [    ...
+		Vonec\Gitsync\GitsyncServiceProvider::class,
+	],
+	```
+3. Publish the config file
+    ```bash
+    php artisan  vendor:publish --provider="Vonec\Gitsync\GitsyncServiceProvider"
+    ```
 
-Add to `config/app.php`:
-
-```php
-Vonec\Gitsync\GitsyncServiceProvider::class,
-```
-
-Install configuration
-
-```shell
-php artisan vendor:publish --provider="Vonec\Gitsync\GitsyncServiceProvider"
-```
 Edit "/config/gitsync.php"
 
 ## Configuration
@@ -66,4 +66,4 @@ If you discover a security vulnerability within Gitsync, please  create an <a hr
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Gitsync is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
