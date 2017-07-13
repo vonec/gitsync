@@ -3,7 +3,7 @@
 namespace Vonec\Gitsync\Http\Controllers;
  
 use Illuminate\Http\Request;
-use Vonec\Gitsync\\Http\Controllers\Controller;
+use Vonec\Gitsync\Http\Controllers\Controller;
 use Artisan;
 use Mail;
 use Exception;
