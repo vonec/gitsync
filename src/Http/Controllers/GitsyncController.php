@@ -3,7 +3,7 @@
 namespace Vonec\Gitsync\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Vonec\Gitsync\\Http\Controllers\Controller;
 use Artisan;
 use Mail;
 use Exception;
@@ -20,7 +20,7 @@ class GitsyncController extends Controller
         $key = $request->input('key');
 
         // Check key
-        if (config('envol.key') !== $key) {
+        if (config('gitsync.key') !== $key) {
             return response()
                 ->json(['error' => 'This key is not allowed'], 403);
         }

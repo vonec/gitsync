@@ -2,7 +2,7 @@
 
 namespace Vonec\Gitsync\Jobs;
 
-use App\Jobs\Job;
+use Vonec\Gitsync\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
